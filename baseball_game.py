@@ -63,7 +63,7 @@ def is_between_100_and_999(user_input_number):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     temp=int(user_input_number)
 
-    if temp>99 and temp<1000:
+    if temp>=100 and temp<1000:
         result=True
     else:
         result = False
@@ -94,8 +94,7 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    r=str(three_digit)
-    if len(set(r))==3:
+    if len(set(three_digit))==3:
         result=False
     else:
         result=True
@@ -157,7 +156,9 @@ def get_not_duplicated_three_digit_number():
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
-    result=get_random_number()
+    result=""
+    is_duplicated_number(result)
+
     while is_duplicated_number(result) is False:
         result=get_random_number()
 
