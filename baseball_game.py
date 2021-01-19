@@ -348,8 +348,8 @@ def main():
         elif index==4:
             break
     #=====================================            
-print("Thank you for using this program")
-print("End of the Game")
+    print("Thank you for using this program")
+    print("End of the Game")
 
 if __name__ == "__main__":
     main()
