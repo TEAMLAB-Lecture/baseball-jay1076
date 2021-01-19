@@ -156,11 +156,12 @@ def get_not_duplicated_three_digit_number():
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
-    result=str(get_random_number())
+    temp="0"
+    is_validated_number(temp)
 
-    while is_validated_number(result) is False:
-        result=str(get_random_number())
-
+    while is_validated_number(result) == False:
+        temp=str(get_random_number())
+    result=temp
     # ==================================
     return result
 
