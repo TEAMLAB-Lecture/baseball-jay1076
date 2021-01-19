@@ -322,15 +322,13 @@ def main():
                 index=1
             else:
                 index=2
-        
         elif index==2:
             tmp=get_strikes_or_ball(user_input, random_number)
             print("Strikes : ",tmp[0]," , ","Balls : ",tmp[1])
             if tmp[0]==3:
                 index=3
             else:
-                index=1
-                    
+                index=1           
         elif index==3:
             ans = input("You Win, One More(Y/N)? ")
             if ans=="0":
