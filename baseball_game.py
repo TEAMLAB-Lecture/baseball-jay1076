@@ -93,8 +93,8 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    r=set(three_digit)
-    if len(r)==3:
+    r=str(three_digit)
+    if len(set(r))==3:
         result=True
     else:
         result=False
@@ -318,12 +318,16 @@ def main():
 
         win = [3, 0]
         while get_strikes_or_ball(user_input, random_number) != win:
+            tmp=get_strikes_or_ball(user_input, random_number)
+            print("Strikes : ", str(tmp[0])," , ", "Balls : ", str(tmp[1]))
+            user_input== 999
             while is_validated_number(user_input) is False:
                 user_input=input("Input Guess Number : ")
                 if is_validated_number(user_input) is False:
                     print("Wrong Input, Input Again")
 
         if get_strikes_or_ball(user_input, random_number) == win:
+            print("Strikes : 3 , Balls : 0")
             ans = input("You Win, One More(Y/N)? ")
 
         if is_no(ans) is True:
