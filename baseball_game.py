@@ -311,6 +311,8 @@ def main():
         # 위의 코드를 포함하여 자유로운 수정이 가능함
         while is_validated_number(user_input) is False:
             user_input=input("Input Guess Number :")
+            if user_input=="0":
+                break
             if is_validated_number(user_input) is False:
                 print("Wrong Input, Input Again")
 
