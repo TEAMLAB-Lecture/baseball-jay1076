@@ -312,6 +312,7 @@ def main():
             user_input=input("Input Guess Number :")
             if user_input=="0":
                 index=4
+                break
             elif is_validated_number(user_input) == False:
                 print("Wrong Input, Input Again")
                 index=1
@@ -328,13 +329,14 @@ def main():
             ans = input("You Win, One More(Y/N)? ")
             if ans=="0":
                 index=4
+                break
             if is_yes(ans):
                 index=1
                 user_input = "999"
                 random_number = get_not_duplicated_three_digit_number()
                 print("Random Number is : ", random_number)
             elif is_no(ans):
-                index=4    
+                index=4
         elif index==4:
             break
     #=====================================            
