@@ -178,7 +178,7 @@ def main():
                                 get_strikes_or_ball(user_input, random_number)
                                 print("Strikes : " +
                                 str(get_strikes_or_ball(user_input, random_number)[0]) + " , " +
-                                "Balls : " + str(get_strikes_or_ball(user_input, random_number)[1]))===================
+                                "Balls : " + str(get_strikes_or_ball(user_input, random_number)[1]))
 
 if __name__ == "__main__":
     main()
