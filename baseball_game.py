@@ -159,7 +159,7 @@ def get_not_duplicated_three_digit_number():
     temp="0"
     is_validated_number(temp)
 
-    while is_validated_number(temp) == False:
+    while is_validated_number(temp) is not True:
         temp=str(get_random_number())
     result=temp
     # ==================================
@@ -312,7 +312,7 @@ def main():
             user_input=input("Input Guess Number :")
             if user_input=="0":
                 index=4
-            elif is_validated_number(user_input) == False:
+            elif is_validated_number(user_input) is False:
                 print("Wrong Input, Input Again")
                 index=1
             else:
