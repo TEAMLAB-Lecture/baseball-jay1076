@@ -96,9 +96,9 @@ def is_duplicated_number(three_digit):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     r=str(three_digit)
     if len(set(r))==3:
-        result=True
-    else:
         result=False
+    else:
+        result=True
 
     # ==================================
     return result
@@ -127,14 +127,8 @@ def is_validated_number(user_input_number):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     s=user_input_number
-    if is_digit(s) is True:
-        if is_between_100_and_999(s) is True:
-            if is_duplicated_number(s) is False:
-                result = True
-            else:
-                result = False
-        else:
-            result = False
+    if is_digit(s) == True and is_between_100_and_999(s) == True and is_duplicated_number(s) == False:
+        result = True
     else:
         result = False
     
