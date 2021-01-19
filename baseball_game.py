@@ -93,8 +93,8 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-
-    if len(set(three_digit))==3:
+    r=set(three_digit)
+    if len(r)==3:
         result=True
     else:
         result=False
@@ -242,7 +242,7 @@ def is_yes(one_more_input):
                 else:
                     result=False
             else:
-                result=Fasle
+                result=False
             
         elif len(one_more_input)==1:
             result=True
