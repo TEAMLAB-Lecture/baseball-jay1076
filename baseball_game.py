@@ -163,9 +163,9 @@ def get_not_duplicated_three_digit_number():
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
-    result=get_random_number
-    while is_duplicated_number(result) is True:
-        result=get_random_number
+    result=get_random_number()
+    while is_duplicated_number(result) is False:
+        result=get_random_number()
 
     # ==================================
     return result
@@ -310,7 +310,7 @@ def main():
 
     print("Play Baseball")
     user_input = "999"
-    random_number = 123
+    random_number = get_not_duplicated_three_digit_number()
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
@@ -339,7 +339,7 @@ def main():
             if is_yes(ans):
                 index=1
                 user_input = "999"
-                random_number = 123
+                random_number = get_not_duplicated_three_digit_number()
                 print("Random Number is : ", random_number)
             elif is_no(ans):
                 index=4    
@@ -349,5 +349,5 @@ def main():
 print("Thank you for using this program")
 print("End of the Game")
 
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
