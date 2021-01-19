@@ -296,48 +296,46 @@ def is_no(one_more_input):
 
 
 def main():
-    print("Play Baseball")
-    user_input = "999"
-    random_number = get_not_duplicated_three_digit_number()
-    print("Random Number is : ", random_number)
+    while 1:
+        print("Play Baseball")
+        user_input = "999"
+        random_number = get_not_duplicated_three_digit_number()
+        print("Random Number is : ", random_number)
+        ibreak=0
+        while 1:
+            user_input=input("Input Guess Number :")
+            if user_input =="0":
+                print("Thank you for using this program")
+                print("End of the Game")
+                ibreak=1
+                break
+            elif not is_validated_number(user_input):
+                print("Wrong Input, Input Again")
+            else:
+                tmp=get_strikes_or_ball(user_input, random_number)
+                print("Strikes : ",tmp[0]," , ","Balls : ",tmp[1])
+                if tmp[0]==3:
+                    while 1:
+                        ans = input("You Win, One More(Y/N)? ")
+                        if ans=="0" or is_no(ans):
+                            print("Thank you for using this program")
+                            print("End of the Game")
+                            ibreak=1
+                            break
+                        elif is_yes(ans):
+                            ibreak=2
+                            break
+                        else:
+                            print("Wrong Input, Input Again")
+                    if ibreak==1 or ibreak==2:
+                        break                    
+        if ibreak==1:
+            break
+            
+
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
-    index=1
-    while 1:
-        if index==1:
-            user_input=input("Input Guess Number :")
-            if user_input=="0":
-                index=4
-                break
-            elif is_validated_number(user_input) == False:
-                print("Wrong Input, Input Again")
-                index=1
-            else:
-                index=2
-        elif index==2:
-            tmp=get_strikes_or_ball(user_input, random_number)
-            print("Strikes : ",tmp[0]," , ","Balls : ",tmp[1])
-            if tmp[0]==3:
-                index=3
-            else:
-                index=1           
-        elif index==3:
-            ans = input("You Win, One More(Y/N)? ")
-            if ans=="0":
-                index=4
-                break
-            if is_yes(ans):
-                index=1
-                user_input = "999"
-                random_number = get_not_duplicated_three_digit_number()
-                print("Random Number is : ", random_number)
-            elif is_no(ans):
-                index=4
-        elif index==4:
-            break
-    #=====================================            
-    print("Thank you for using this program")
-    print("End of the Game")
+    
 
 if __name__ == "__main__":
     main()
