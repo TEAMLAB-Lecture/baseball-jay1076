@@ -193,8 +193,8 @@ def get_strikes_or_ball(user_input_number, random_number):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    inum = user_input_number
-    rnum = str(random_number)
+    inum = user_input_number.strip()
+    rnum = random_number.strip()
     strikes = 0
     ball = 0
     for k in range(0,3) :
