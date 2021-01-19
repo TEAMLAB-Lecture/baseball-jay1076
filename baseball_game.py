@@ -159,7 +159,7 @@ def get_not_duplicated_three_digit_number():
     temp="0"
     is_validated_number(temp)
 
-    while is_validated_number(result) == False:
+    while is_validated_number(temp) == False:
         temp=str(get_random_number())
     result=temp
     # ==================================
