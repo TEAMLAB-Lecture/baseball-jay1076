@@ -336,6 +336,8 @@ def main():
                     
         elif index==3:
             ans = input("You Win, One More(Y/N)? ")
+            if ans=="0":
+                index=4
             if is_yes(ans):
                 index=1
                 user_input = "999"
