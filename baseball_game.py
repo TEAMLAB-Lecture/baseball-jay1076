@@ -31,7 +31,8 @@ def is_digit(user_input_number):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    if user_input_number.isdigit() is True:
+    k=str(user_input_number)
+    if k.isdigit() is True:
         result = True
     else :
         result = False
@@ -126,8 +127,14 @@ def is_validated_number(user_input_number):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     s=user_input_number
-    if is_digit(s) is True and is_between_100_and_999(s) is True and is_duplicated_number(s) is False:
-        result = True
+    if is_digit(s) is True:
+        if is_between_100_and_999(s) is True:
+            if is_duplicated_number(s) is True:
+                result = True
+            else:
+                result = False
+        else:
+            result = False
     else:
         result = False
     
@@ -300,42 +307,47 @@ def is_no(one_more_input):
 
 
 def main():
-    
-    ans="Y"
-    while is_yes(ans) is True:
-        print("Play Baseball")
-        user_input = 999
-        random_number = str(get_not_duplicated_three_digit_number())
-        print("Random Number is : ", random_number)
-        # ===Modify codes below=============
-        # 위의 코드를 포함하여 자유로운 수정이 가능함
-        while is_validated_number(user_input) is False:
+
+    print("Play Baseball")
+    user_input = "999"
+    random_number = 123
+    print("Random Number is : ", random_number)
+    # ===Modify codes below=============
+    # 위의 코드를 포함하여 자유로운 수정이 가능함
+    index=1
+    while 1:
+        if index==1:
             user_input=input("Input Guess Number :")
             if user_input=="0":
-                break
-            if is_validated_number(user_input) is False:
+                index=4
+            elif is_validated_number(user_input) is False:
                 print("Wrong Input, Input Again")
-
-        win = [3, 0]
-        while get_strikes_or_ball(user_input, random_number) != win:
+                index=1
+            else:
+                index=2
+        
+        elif index==2:
             tmp=get_strikes_or_ball(user_input, random_number)
-            print("Strikes : ", str(tmp[0])," , ", "Balls : ", str(tmp[1]))
-            user_input== 999
-            while is_validated_number(user_input) is False:
-                user_input=input("Input Guess Number : ")
-                if is_validated_number(user_input) is False:
-                    print("Wrong Input, Input Again")
-
-        if get_strikes_or_ball(user_input, random_number) == win:
-            print("Strikes : 3 , Balls : 0")
+            print("Strikes : ",tmp[0]," , ","Balls : ",tmp[1])
+            if tmp[0]==3:
+                index=3
+            else:
+                index=1
+                    
+        elif index==3:
             ans = input("You Win, One More(Y/N)? ")
-
-        if is_no(ans) is True:
+            if is_yes(ans):
+                index=1
+                user_input = "999"
+                random_number = 123
+                print("Random Number is : ", random_number)
+            elif is_no(ans):
+                index=4    
+        elif index==4:
             break
-    
-    # ==================================
-    print("Thank you for using this program")
-    print("End of the Game")
+    #=====================================            
+print("Thank you for using this program")
+print("End of the Game")
 
 #if __name__ == "__main__":
 #    main()
