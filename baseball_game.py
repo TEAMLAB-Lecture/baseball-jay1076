@@ -152,11 +152,11 @@ def get_not_duplicated_three_digit_number():
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     # get_random_number() 함수를 사용하여 random number 생성
-    temp="0"
+    temp=0
 
     while 1:
-        temp=str(get_random_number())
-        if is_validated_number(temp):
+        temp=get_random_number()
+        if is_validated_number(str(temp)):
             break
     result=temp
     # ==================================
@@ -190,8 +190,8 @@ def get_strikes_or_ball(user_input_number, random_number):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    inum = user_input_number.strip()
-    rnum = random_number.strip()
+    inum = user_input_number
+    rnum = str(random_number)
     strikes = 0
     ball = 0
     for k in range(0,3) :
