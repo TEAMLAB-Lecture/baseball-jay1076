@@ -93,6 +93,8 @@ def is_duplicated_number(three_digit):
     if len(three_digit)==3:
         if len(set(three_digit))==3:
             result=False
+        else:
+            result=True
     else:
         result=True
 
