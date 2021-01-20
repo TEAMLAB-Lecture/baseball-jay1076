@@ -303,20 +303,20 @@ def main():
         print("Random Number is : ", random_number)
         ibreak=0
         while 1:
-            user_input=input("Input Guess Number :")
+            user_input=input("Input guess number :")
             if user_input =="0":
                 print("Thank you for using this program")
                 print("End of the Game")
                 ibreak=1
                 break
             elif not is_validated_number(user_input):
-                print("Wrong Input, Input Again")
+                print("Wrong Input, Input again")
             else:
                 tmp=get_strikes_or_ball(user_input, random_number)
                 print("Strikes : ",tmp[0]," , ","Balls : ",tmp[1])
                 if tmp[0]==3:
                     while 1:
-                        ans = input("You Win, One More(Y/N)? ")
+                        ans = input("You win, one more(Y/N) ?")
                         if ans=="0" or is_no(ans):
                             print("Thank you for using this program")
                             print("End of the Game")
@@ -326,7 +326,7 @@ def main():
                             ibreak=2
                             break
                         else:
-                            print("Wrong Input, Input Again")
+                            print("Wrong Input, Input again")
                     if ibreak==1 or ibreak==2:
                         break                    
         if ibreak==1:
