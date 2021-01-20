@@ -157,7 +157,7 @@ class TestBaseballGame(unittest.TestCase):
                                 str(ball), console[i + 2].upper())
                     elif int(input_list[i]) > int(target_number):
                         self.assertTrue(
-                                "WRONG INPUT" in console[i + 2].upper())
+                            "WRONG INPUT" in console[i + 2].upper())
                     elif int(input_list[i]) == int(target_number):
                         self.assertIn(str(3), console[i + 2].upper())
                         self.assertIn(str(0), console[i + 2].upper())
